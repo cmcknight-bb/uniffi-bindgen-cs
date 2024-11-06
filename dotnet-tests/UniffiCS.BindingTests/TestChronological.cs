@@ -34,7 +34,7 @@ public class TestChronological
             ChronologicalMethods.Diff(EpochSecond(100, 0), EpochSecond(101, 0));
         });
 
-        Assert.Throws<ArgumentOutOfRangeException>(() =>
+        Assert.Throws<ChronologicalException.TimeOverflow>(() =>
         {
             ChronologicalMethods.Add(DateTime.MaxValue, TimeSpan.MaxValue);
         });
